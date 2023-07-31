@@ -5,6 +5,7 @@ import express from "express"
 import authRoutes from "./routes/auth.route"
 import bodyParser from "body-parser";
 import todoRoutes from "./routes/todo.routes";
+import './cronjobs/expiredTodoCronJob'
 
 //env config
 dotenv.config();
