@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import express from "express"
 import authRoutes from "./routes/auth.route"
 import bodyParser from "body-parser";
+import todoRoutes from "./routes/todo.routes";
 
 //env config
 dotenv.config();
@@ -18,7 +19,7 @@ const MONGODB_URI = process.env.MONGODB_URI;
 app.use(bodyParser.json());
 
 // Routes
-app.use("/api", authRoutes);
+app.use("/api", authRoutes, todoRoutes);
 
 // Connect to MongoDB
 mongoose
